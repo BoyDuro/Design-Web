@@ -1,0 +1,15 @@
+label{
+    /* LABEL naturalmente tem comportamento INLINE, ent n aceita WIDTH nem PADDING direito, necessitando do DISPLAY: INLINE-BLOCK */
+    display: inline-block;
+    width: 10rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: blanchedalmond;
+}
+
+input[type='submit']{
+    /* o TYPE define o input específico q vc quer alterar */
+    background-color: black;
+    padding: 1rem;
+    color: white;
+}

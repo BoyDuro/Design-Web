@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE ESTÁGIO</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>DIRETORIA DE EXTENSÃO</h1>
+    <h2>CADASTRO PARA ESTÁGIO</h2>
+    <form action="respota.html" method="get">
+        <!-- O método get deixa as informações expostas, já o método post, envia os dados escondidos -->
+        <label for="nome">Nome: </label>
+        <!-- A marcação de label é o rótulo do campo do formulário e é importante para ACESSIBILIDADE -->
+        <!-- o FOR liga com o ID, relacionando a label com o componente de entrada de dados. O input, pode ficar dentro da label tbm, nesse caso sem a necessidade do FOR -->
+        <input type="text" id="nome" name="nome" value="Dri"><br>
+        <!-- o ID é um valor ÚNICO no código, ou seja, n irá se repetir. Além disso, n pode ter caracteres especiais -->
+         <!-- o VALUE dá um valor q JÁ estará no formulário, ou seja, ele edita os dados dele -->
+
+        <label for="email">E-mail: </label>
+        <input type="text" id="email" name="email" placeholder="Digite seu e-mail aqui..."><br>
+        <!-- o PLACEHOLDER é o textinho q aparece enquanto cê n digita -->
+        
+        <label for="nascimento">Data de Nascimento: </label>
+        <input type="date" id="nascimento" disabled><br>
+        <!-- disable desativa a função -->
+
+        <label for="curriculo">Currículo: </label>
+        <input type="file" id="curriculo" required><br>
+        <!-- o input do tipo FILE permite que o usuário anexe um arquivo, no botão q tem lá -->
+         <!-- o atributo REQUIRED faz com que o campo seja obrigatório -->
+        
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" maxlength="7" minlength="3"><br>
+        <!-- e agr temos o PASSWORD, q é o tipo senha. Outra coisa é em relação ao MAX e o MIN, q definem o limite de caracteres -->
+
+        <label for="uf">Estado: </label>
+        <!-- SELECT pode ser chamado de COMBOBOX -->
+        <select name="uf" id="uf">
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="pe" selected>Pernambuco</option>
+            <option value="pb">Paraíba</option>
+            <!-- o COMBOBOX é uma caixa de opções predefinidas pra vc clicar. Essas opções são definidas pelos OPTION. Nessa caixa, ficam grupos de itens mto similares, como o caso: Estados -->
+             <!-- no OPTION, o VALUE é o valor q será entregue pra o banco de dados. Tbm pode haver o atributo SELECTED, q será o OPTION q aparecerá no começo -->
+             <!-- No SELECT, pode ter um atributo chamado MULTIPLE, para várias escolhas -->
+        </select><br>
+
+        <input type="submit" value="ENVIAR">
+    </form>
+</body>
+</html>
