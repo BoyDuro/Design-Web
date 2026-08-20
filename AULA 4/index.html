@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURRÍCULO</title>
+</head>
+<body>
+    <form action="">
+        <!-- Podem ter várias marcações de form na página, casa uma com uma função própria. Busca, login, enquetes, etc... -->
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" required><br>
+    
+    <p>Qual sua área? <br>
+        <label>
+            <input type="checkbox" name="area" id="design" value="design">
+            <!-- O checkbox é aquela caixinha q vc seleciona opções -->
+
+            <!-- Não precisa ter FOR na label qndo o input está dentro (REVER for NA AULA 3) -->
+
+            <!-- O atributo de NAME representa o grupo todo. O VALUE será o valor q será recebido qndo alguém digitar ou enviar algo (no caso, será a informação disponível lá) -->
+            Design
+        </label><br>
+        <label>
+            <input type="checkbox" name="area" id="prog" value="prog">
+            Programação
+        </label><br>
+        <label>
+            <input type="checkbox" name="area" id="redes" value="redes">
+            Redes
+        </label>
+    </p>
+
+    <p>Qual seu curso: <br>
+        <label>
+            <input type="radio" name="curso" value="infoweb">
+            INFOWEB
+            <!-- o RADIO é semelhante ao checkbox, contudo ele só deixa marcar 1 -->
+
+            <!-- aqui, podemos perceber a importância do NAME, já q como o radio só deixa marcar 1, se o NAME estiver o msm para outro label em outro canto, ele contará q faz parte da MESMA LISTA -->
+        </label><br>
+        <label>
+            <input type="radio" name="curso" value="adm">
+            ADM
+        </label><br>
+        <label>
+            <input type="radio" name="curso" value="msi">
+            Manutenção e Suporte
+        </label>
+    </p>
+
+    <fieldset>
+        <!-- FIELDSET é um componente opcional, servindo para organizar o formulário visualmente -->
+        <legend>MENSAGEM</legend>
+        <label for="mensagem">
+            Mensagem: <br>
+            <textarea name="msn" id="mensagem" cols="30" rows="10" maxlength="50"></textarea>
+            <!-- o TEXTAREA n precisa de conteúdo dentro da tag, mas por receber mto texto, o html exige a tag de fechamento -->
+             <!-- Diferente do input de text pq aceitar texto longo -->
+        </label>
+    </fieldset>
+
+    <label for="idade">
+        Idade:
+        <input type="number" id="idade" max="10" min="3">
+        <!-- o input do tipo NUMBER é como propriamente dito, serve pra números. o MAX e o MIN servem pra delimitar os números q poderá ter -->
+    </label><br>
+
+    <label for="cidade">
+        Cidade:
+        <input type="text" id="cidade" list="list-cidade">
+    </label>
+    <datalist id="list-cidade">
+        <option value="Recife">
+        <option value="Natal">
+        <option value="João Pessoa">
+        <option value="Fortaleza">
+    </datalist>
+    <!-- DATALIST é um componente novo, parecido com o COMBOBOX. Se relaciona com o input com o atributo 'list' -->
+     <!-- ele permite q o usuário digite ou selecione -->
+
+    <input type="hidden" id="id-user" value="5487">
+
+    <input type="submit" value="ENVIAR">
+    </form>
+</body>
+</html>
