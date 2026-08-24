@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+    <script>
+        /* 
+        - javascript é uma linguagem de programação que funciona no lado cliente e servidor 
+        - js não é java, java é linguagem backend de alto nível, fortemente tipada (case sensitive - document != Document - Sensível à caixa alta)(fortemente tipado - significa que uma variável definida como INT não pode mudar para STRING)
+        - usada para criar comportamentos no desenvolvimento web, exemplos: galerias de fotos, validação de formulários, modal
+        - pode ser usado com FRAMEWORK
+        */
+    </script>
+</head>
+<body>
+    <script>
+        window.alert("OLÁ MUNDO!!");
+        /* window é um objeto */
+        /* alert é um método */
+
+        let dia = window.confirm("Como foi o fim de semana?")
+        /* let dia é uma definição de variável */
+        window.alert(dia);
+
+        let cor = window.prompt("Qual sua cor favorita?");
+    </script>
+
+    <p id="curso">INFOWEB</p>
+    <script>
+        document.getElementById('curso').style.color = cor;
+        /* document é um objeto, getElementById é um método */
+        /* style são propriedades */
+        /* a marcação do id tem q estar ANTES da chamada do método */
+        /* DOM - modelo de objeto do documento */
+        document.write('<p>HOJE TEM ABERTURA!!!!!!!!!</p>');
+        document.getElementById('curso').innerHTML = "INFOWEB 2025";
+        /* propriedade innerHTML - INSERIR html dentro da marcação com id */
+
+        let num = 3;
+        let float = 5.8;
+        let primeironome = 'Matheus';
+        let boo = true;
+        /* é possível criar variáveis usando LET */
+        /* LET permite mudar o valor da variável */
+        /* CONST - não permite mudar o valor depois... "constante" */
+
+        console.log(num+float);
+
+    </script>
+</body>
+</html>
