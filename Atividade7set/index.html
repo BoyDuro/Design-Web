@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade do Feriado</title>
+</head>
+<body id="tudo">
+    <h1>ATIVIDADE DO FERIADO</h1>
+    <h2>QUESTÃO 2</h2>
+    <p id="nome"></p>
+    <script>
+        const cores = ["blue", "red", "orange", "green", "magenta", "yellow", "cyan"]
+        let nome = document.getElementById("nome")
+        for(let i=0 ; i<7 ; i+=1){
+            nome.innerHTML += `<p style='color:${cores[i]}'>Matheus</p>`
+        }
+    </script>
+
+    <h2>QUESTÃO 3</h2>
+    <p id="numeros"></p>
+    <script>
+        let numeros = document.getElementById("numeros")
+        for(let i=1 ; i<6 ; i+=1){
+            numeros.innerHTML += `<p style='font-size:${i/2}rem'>'${i}'</p>`
+        }
+    </script>
+
+    <h2>QUESTÃO 4</h2>
+    <label>
+        Nome: <input type="text" id="nome2"> <br>
+        <button id="imprimir">IMPRIMIR</button>
+        <p id="nomeTamanho"></p>
+    </label>
+    <script>
+        let imprimir = document.getElementById("imprimir")
+        imprimir.addEventListener("click", function(e){
+            let nome2 = document.getElementById("nome2")
+            let nomesImpressos = document.getElementById("nomeTamanho")
+            for(let i=1 ; i<6 ; i+=1){
+            nomesImpressos.innerHTML += `<p style='font-size:${i}rem'>'${nome2.value}'</p>`
+        }
+        })
+    </script>
+
+    <h2>QUESTÃO 5</h2>
+    <button id="aumentar">AUMENTAR PARA 2.0rem</button>
+    <button id="diminuir">AUMENTAR PARA 0.5rem</button>
+    <script>
+        let aumentar = document.getElementById("aumentar")
+        let diminuir = document.getElementById("diminuir")
+        let body = document.getElementById("tudo")
+        aumentar.addEventListener("click", function(e){
+            body.style.fontSize = "2rem"
+        })
+        diminuir.addEventListener("click", function(e){
+            body.style.fontSize = "0.5rem"
+        })
+    </script>
+</body>
+</html>
