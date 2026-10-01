@@ -7,12 +7,12 @@ const lancheifrn = createApp({
         // a variável teve que ficar dentro do setup porque ela precisava mudar os valores
         //isto é, ser dinâmica, não apenas acessar seus dados, mas também alterar os dados.
         
-        const lancheifrnLS = localStorage.getItem("lanhces");
+        const lancheifrnLS = localStorage.getItem("lanches");
         //criou uma variável que representa a TABELA do banco de dados do navegador da nossa aplicação
 
         //o array de objetos precisa ficar dentro do setup para mudar os valores das propriedades
         const lanches = ref(
-            lancheifrnLS ? JSON.parse(lancheifrnLS)
+            lancheifrnLS ? JSON.parse(lancheifrnLS):
             //caso não tenham dados, serão adicionados
             //condição ? se SIM : se NÃO
 
@@ -34,6 +34,32 @@ const lancheifrn = createApp({
                 imagem: 'tapioca.jpg'
             }
         ])
+        
+        const frutaifrnLS = localStorage.getItem("frutas");
+
+        const frutas = ref(
+            frutaifrnLS ? JSON.parse(frutaifrnLS):
+            //caso não tenham dados, serão adicionados
+            //condição ? se SIM : se NÃO
+
+            [
+            //lista de objetos
+            {
+                descricao: 'Banana',
+                ativo: false,
+                imagem: 'banana.jpg'
+            },
+            {
+                descricao: 'Melancia',
+                ativo: false,
+                imagem: 'melancia.jpg'
+            },
+            {
+                descricao: 'Tangerina',
+                ativo: false,
+                imagem: 'tangerina.jpg'
+            }
+        ])
 
 
         watch(lanches, () => {
@@ -44,6 +70,10 @@ const lancheifrn = createApp({
         //deep: true - profundo... significa que observa até os valores das propriedades do objeto
         //se houver alteração no valor, por exemplo do 'ativo', este é atualizado no localstorage
         //immediate: true - coloca os valores, os objetos, na tabela do localstorage imediatamente ao abrir a aplicação
+
+        watch(frutas, () => {
+            localStorage.setItem('frutas', JSON.stringify(frutas.value))
+        }, {deep: true, immediate: true})
 
         
         function mudarAtivo(item){
@@ -61,13 +91,29 @@ const lancheifrn = createApp({
                 imagem: 'bolo.jpg'
             })
         }
+        
+        const novaFrutaInput = ref('');
+        function novaFruta(){
+            frutas.value.push({
+                descricao: novaFrutaInput.value,
+                ativo: false,
+                imagem: 'banana.jpg'
+            })
+        }
+
+        function remover_lanche{
+
+        }
 
         return{
             mensagem: ref("Olá, Mundo!!"), //é o getElementById            
             lanches,
             mudarAtivo,
             novoLancheInput,
-            novoLanche
+            novoLanche,
+            frutas,
+            novaFrutaInput,
+            novaFruta
         }
     }
 })

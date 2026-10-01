@@ -21,9 +21,24 @@
             <ol>
                 <li class="lanche" v-for="lanche in lanches">
                     {{lanche.descricao}}
+                    <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" @click="remover_lanche()">
                 </li>
             </ol>
 
+            <hr>
+
+            <fieldset class="adicionar">
+                <legend>Inserir frutas</legend>
+                <input type="text" placeholder="Nova fruta..." v-model="novaFrutaInput">
+                <button @click="novaFruta()" class="add">INSERIR</button>
+            </fieldset>
+
+            <ol>
+                <li class="fruta" v-for="fruta in frutas">
+                    {{fruta.descricao}}
+                    <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" @click="remover_fruta()">
+                </li>
+            </ol>
         </main>
         
         <app-footer></app-footer>
