@@ -19,9 +19,9 @@
             </fieldset>
 
             <ol>
-                <li class="lanche" v-for="lanche in lanches">
+                <li class="lanche" v-for="(lanche, indice) in lanches" @click="editar_lanche(lanche, indice)">
                     {{lanche.descricao}}
-                    <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" @click="remover_lanche()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" @click="remover_lanche(indice)" width="15">
                 </li>
             </ol>
 
@@ -34,9 +34,9 @@
             </fieldset>
 
             <ol>
-                <li class="fruta" v-for="fruta in frutas">
+                <li class="fruta" v-for="(fruta, indice) in frutas">
                     {{fruta.descricao}}
-                    <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" @click="remover_fruta()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" @click="remover_fruta(indice)" width="15">
                 </li>
             </ol>
         </main>

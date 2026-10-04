@@ -85,11 +85,17 @@ const lancheifrn = createApp({
 
         const novoLancheInput = ref('');
         function novoLanche(){
-            lanches.value.push({
-                descricao: novoLancheInput.value,
-                ativo: false,
-                imagem: 'bolo.jpg'
-            })
+            if(indice_de_editar.value != null){
+                lanches.value[indice_de_editar.value].descricao = novoLancheInput.value
+                indice_de_editar.value = null
+            }
+            else{
+                lanches.value.push({
+                    descricao: novoLancheInput.value,
+                    ativo: false,
+                    imagem: 'bolo.jpg'
+                })
+            }
         }
         
         const novaFrutaInput = ref('');
@@ -101,8 +107,19 @@ const lancheifrn = createApp({
             })
         }
 
-        function remover_lanche{
+        function remover_lanche(indice){
+            lanches.value.splice(indice, 1)
+        }
+        
+        function remover_fruta(indice){
+            frutas.value.splice(indice, 1)
+        }
 
+
+        const indice_de_editar = ref('');
+        function editar_lanche(lanche, indice){
+            novoLancheInput.value = lanche.descricao
+            indice_de_editar.value = indice
         }
 
         return{
@@ -113,7 +130,10 @@ const lancheifrn = createApp({
             novoLanche,
             frutas,
             novaFrutaInput,
-            novaFruta
+            novaFruta,
+            remover_lanche,
+            remover_fruta,
+            editar_lanche
         }
     }
 })
