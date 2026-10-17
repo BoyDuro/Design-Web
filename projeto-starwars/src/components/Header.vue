@@ -1,13 +1,6 @@
 <template>
     <header>
         <h1>SITE DE STAR WARS</h1>
-        <nav>
-          <ul>
-            <li><router-link to="/filmes">Filmes</router-link></li>
-            <li><router-link to="/series">Séries</router-link></li>
-          </ul>
-        </nav>
-        <router-view/>
     </header>
 </template>
 
@@ -25,5 +18,7 @@ export default {
 header{
   background-color: white;
   padding: 1rem;
+  color: #2c3e50;
+  margin-top: 0;
 }
 </style>
