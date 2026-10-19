@@ -4,6 +4,7 @@
     <ul>
       <li><router-link to="/filmes">Filmes</router-link></li>
       <li><router-link to="/series">Séries</router-link></li>
+      <li><router-link to="/noticias">Notícias</router-link></li>
     </ul>
   </nav>
   <router-view/>
