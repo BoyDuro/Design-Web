@@ -22,7 +22,9 @@
     <div>
         <CardPadrao v-for="item in personagens" 
         :key="item.id"
-        :name="item.name"
+        :titulo="item.name"
+        :subtitulo="item.species"
+        :imagem="item.image"
         />
     </div>
     
